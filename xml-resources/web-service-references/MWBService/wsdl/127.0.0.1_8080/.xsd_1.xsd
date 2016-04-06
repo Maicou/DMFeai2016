@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e. --><xs:schema xmlns:tns="http://www.fhnw.ch/wi/eai/mwb/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.fhnw.ch/wi/eai/mwb/">
+
+<xs:element name="holeKunde" type="tns:holeKunde"></xs:element>
+
+<xs:element name="holeKundeResponse" type="tns:holeKundeResponse"></xs:element>
+
+<xs:element name="holeMessgeraet" type="tns:holeMessgeraet"></xs:element>
+
+<xs:element name="holeMessgeraetResponse" type="tns:holeMessgeraetResponse"></xs:element>
+
+<xs:element name="listeKundeNachname" type="tns:listeKundeNachname"></xs:element>
+
+<xs:element name="listeKundeNachnameResponse" type="tns:listeKundeNachnameResponse"></xs:element>
+
+<xs:element name="listeMessID" type="tns:listeMessID"></xs:element>
+
+<xs:element name="listeMessIDForCustomer" type="tns:listeMessIDForCustomer"></xs:element>
+
+<xs:element name="listeMessIDForCustomerResponse" type="tns:listeMessIDForCustomerResponse"></xs:element>
+
+<xs:element name="listeMessIDResponse" type="tns:listeMessIDResponse"></xs:element>
+
+<xs:element name="printKunde" type="tns:printKunde"></xs:element>
+
+<xs:element name="printKundeResponse" type="tns:printKundeResponse"></xs:element>
+
+<xs:element name="printMessgeraete" type="tns:printMessgeraete"></xs:element>
+
+<xs:element name="printMessgeraeteResponse" type="tns:printMessgeraeteResponse"></xs:element>
+
+<xs:complexType name="holeKunde">
+<xs:sequence>
+<xs:element name="queryVorname" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="queryNachname" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="holeKundeResponse">
+<xs:sequence>
+<xs:element name="kid" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="vorname" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="nachname" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="strasse" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="plz_stadt" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="kundenart" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="printKunde">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="printKundeResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="printMessgeraete">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="printMessgeraeteResponse">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="holeMessgeraet">
+<xs:sequence>
+<xs:element name="queryMessID" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="holeMessgeraetResponse">
+<xs:sequence>
+<xs:element name="messID" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="kid" type="xs:int" minOccurs="0"></xs:element>
+<xs:element name="messgegenstand" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="wert" type="xs:float" minOccurs="0"></xs:element>
+<xs:element name="ausfuehrung" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="tarifplan" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listeMessID">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listeMessIDResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listeMessIDForCustomer">
+<xs:sequence>
+<xs:element name="queryKID" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listeMessIDForCustomerResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listeKundeNachname">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listeKundeNachnameResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

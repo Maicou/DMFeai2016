@@ -5,8 +5,14 @@
  */
 package dmfeai2016;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.xml.ws.Holder;
 
@@ -76,8 +82,7 @@ public class Main {
             messIdForCustomer = listeMessIDForCustomer(i);
             System.out.println("Messids für Customer " + i + " " + messIdForCustomer);
         }
-        
-        
+
         //Mueller ist hier ein Test-Query
         String queryVorname = null;
         String queryNachname = "Mueller";
@@ -89,7 +94,7 @@ public class Main {
         Holder<String> kundenart = new Holder();
         holeKunde(queryVorname, queryNachname, kid, vorname, nachname, strasse, plzStadt, kundenart);
         System.out.println(vorname.value);
-        
+
         //MessID 1 ist hier ein Testquery
         int queryMessID = 1;
         Holder<Integer> messID2 = new Holder();
@@ -101,12 +106,36 @@ public class Main {
         holeMessgeraet(queryMessID, messID2, kid, messgegenstand, wert, ausfuehrung, tarifplan);
         System.out.println(messgegenstand.value);
 
-        
-        
         //Diese zwei Methoden verstehe ich noch nicht was die sollen
         printKunde();
         printMessgeraete();
 
-    }
+        //CSV Datei einlesen und splitten
+        String csvFile = "./src/AF/Messung.csv";
+        BufferedReader br = null;
+        String line = "";
+        String cvsSplitBy = ",";
 
+        try {
+
+            br = new BufferedReader(new FileReader(csvFile));
+            while ((line = br.readLine()) != null) {
+
+                // use comma as separator
+                String[] messung = line.split(cvsSplitBy);
+                int numOfColumns = messung.length;
+                for (int i = 0; i < numOfColumns; i++) {
+                    System.out.println(messung[i]);
+                }
+                System.out.println("\n");
+
+            }
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
 }

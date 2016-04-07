@@ -3,7 +3,7 @@
   <services/>
   <clients>
     <client name="MWBService">
-      <wsdl-url>file:/Users/marcomancuso/Dropbox/EAI%20Semesterarbeit%20DMF/export/MWB/MWBService.wsdl</wsdl-url>
+      <wsdl-url>file:/C:/Users/David/Dropbox/EAI%20Semesterarbeit%20DMF/export/MWB/MWBService.wsdl</wsdl-url>
       <local-wsdl-file>MWBService.wsdl</local-wsdl-file>
       <package-name>ch.fhnw.wi.eai.mwb</package-name>
       <catalog-file>catalog.xml</catalog-file>
@@ -22,7 +22,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>file:/Users/marcomancuso/Dropbox/EAI%20Semesterarbeit%20DMF/export/MWB/MWBService.wsdl</wsimport-option-value>
+          <wsimport-option-value>file:/C:/Users/David/Dropbox/EAI%20Semesterarbeit%20DMF/export/MWB/MWBService.wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>

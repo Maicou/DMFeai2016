@@ -19,7 +19,7 @@
     <target name="wsimport-client-MWBService" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/MWBService"/>
         <property name="wsdl-MWBService" location="xml-resources/web-service-references/MWBService/wsdl/MWBService.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/MWBService" destdir="${build.generated.dir}/jax-wsCache/MWBService" wsdl="${wsdl-MWBService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="file:/Users/marcomancuso/Dropbox/EAI%20Semesterarbeit%20DMF/export/MWB/MWBService.wsdl" xnocompile="true" xendorsed="true">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/MWBService" destdir="${build.generated.dir}/jax-wsCache/MWBService" wsdl="${wsdl-MWBService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="file:/C:/Users/David/Dropbox/EAI%20Semesterarbeit%20DMF/export/MWB/MWBService.wsdl" xnocompile="true" xendorsed="true">
             <depends file="${wsdl-MWBService}"/>
             <produces dir="${build.generated.dir}/jax-wsCache/MWBService"/>
         </wsimport>

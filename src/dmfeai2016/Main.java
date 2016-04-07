@@ -82,6 +82,7 @@ public class Main {
             messIdForCustomer = listeMessIDForCustomer(i);
             System.out.println("Messids für Customer " + i + " " + messIdForCustomer);
         }
+        System.out.println("\n");
 
         //Mueller ist hier ein Test-Query
         String queryVorname = null;
@@ -93,6 +94,7 @@ public class Main {
         Holder<String> plzStadt = new Holder();
         Holder<String> kundenart = new Holder();
         holeKunde(queryVorname, queryNachname, kid, vorname, nachname, strasse, plzStadt, kundenart);
+        
         System.out.println(vorname.value);
 
         //MessID 1 ist hier ein Testquery
@@ -103,8 +105,9 @@ public class Main {
         Holder<Float> wert = new Holder();
         Holder<String> ausfuehrung = new Holder();
         Holder<String> tarifplan = new Holder();
-        holeMessgeraet(queryMessID, messID2, kid, messgegenstand, wert, ausfuehrung, tarifplan);
+        holeMessgeraet(queryMessID, messID2, kid2, messgegenstand, wert, ausfuehrung, tarifplan);
         System.out.println(messgegenstand.value);
+        System.out.println("\n");
 
         //Diese zwei Methoden verstehe ich noch nicht was die sollen
         printKunde();

@@ -5,6 +5,8 @@
  */
 package dmfeai2016;
 
+import MWB.Kunde;
+import MWB.Messung;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -68,12 +70,19 @@ public class Main {
         // holeKunde(queryVorname,queryNachname,kid,vorname,nachname,strasse,plzStadt,kundenart);
         List<String> kundeNachname = new ArrayList();
         kundeNachname = listeKundeNachname();
-        System.out.println("Alle Customer Nachnamen " + kundeNachname);
+        ArrayList<Kunde> AlleKunden = new ArrayList(); 
+        ArrayList<Messung> AlleMessgeraete = new ArrayList();
+        for(int i=0; i<kundeNachname.size();i++){
+            Kunde KundeMWB = new Kunde(kundeNachname.get(i));
+            AlleKunden.add(KundeMWB);
+        }
+        System.out.println("KUNDEN AUS MWB - - - - - - - - - - - - - - - -");
+        System.out.println(AlleKunden.toString());
         int numberOfCustomer = kundeNachname.size();
 
-        List<Integer> messID = new ArrayList();
-        messID = listeMessID();
-        System.out.println("Alle MessIDs " + messID);
+        List<Integer> messIDs = new ArrayList();
+        messIDs = listeMessID();
+        System.out.println("Alle MessIDs " + messIDs);
 
         System.out.println("Anzahl Customer: " + numberOfCustomer);
 
@@ -82,31 +91,24 @@ public class Main {
             messIdForCustomer = listeMessIDForCustomer(i);
             System.out.println("Messids für Customer " + i + " " + messIdForCustomer);
         }
-        System.out.println("\n");
-
-        //Mueller ist hier ein Test-Query
-        String queryVorname = null;
-        String queryNachname = "Mueller";
-        Holder<Integer> kid = new Holder();
-        Holder<String> vorname = new Holder();
-        Holder<String> nachname = new Holder();
-        Holder<String> strasse = new Holder();
-        Holder<String> plzStadt = new Holder();
-        Holder<String> kundenart = new Holder();
-        holeKunde(queryVorname, queryNachname, kid, vorname, nachname, strasse, plzStadt, kundenart);
-        
-        System.out.println(vorname.value);
+        for(int i = 1; i<=messIDs.size();i++){
+            Messung Messgeraet = new Messung(i);
+            AlleMessgeraete.add(Messgeraet);
+        }
+        System.out.println("\nMESSUNGEN AUS MWB - - - - - - - - - - - - - - - -");
+        System.out.println(AlleMessgeraete.toString());
+  
 
         //MessID 1 ist hier ein Testquery
-        int queryMessID = 1;
-        Holder<Integer> messID2 = new Holder();
-        Holder<Integer> kid2 = new Holder();
-        Holder<String> messgegenstand = new Holder();
-        Holder<Float> wert = new Holder();
-        Holder<String> ausfuehrung = new Holder();
-        Holder<String> tarifplan = new Holder();
-        holeMessgeraet(queryMessID, messID2, kid2, messgegenstand, wert, ausfuehrung, tarifplan);
-        System.out.println(messgegenstand.value);
+//        int queryMessID = 1;
+//        Holder<Integer> messID2 = new Holder();
+//        Holder<Integer> kid2 = new Holder();
+//        Holder<String> messgegenstand = new Holder();
+//        Holder<Float> wert = new Holder();
+//        Holder<String> ausfuehrung = new Holder();
+//        Holder<String> tarifplan = new Holder();
+//        holeMessgeraet(queryMessID, messID2, kid2, messgegenstand, wert, ausfuehrung, tarifplan);
+//     // steht für "Strom"   System.out.println(messgegenstand.value);
         System.out.println("\n");
 
         //Diese zwei Methoden verstehe ich noch nicht was die sollen
@@ -126,8 +128,8 @@ public class Main {
 
                 // use comma as separator
                 String[] messung = line.split(cvsSplitBy);
-                int numOfColumns = messung.length;
-                for (int i = 0; i < numOfColumns; i++) {
+                int numOfWords = messung.length;
+                for (int i = 0; i < numOfWords; i++) {
                     System.out.println(messung[i]);
                 }
                 System.out.println("\n");

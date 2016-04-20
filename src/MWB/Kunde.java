@@ -22,10 +22,16 @@ public class Kunde {
     Holder<String> plzStadt = new Holder();
     Holder<String> kundenart = new Holder();
 
-    public Kunde() {
+    public Kunde(String queryNachname) {
 
         this.queryVorname = queryVorname;
         this.queryNachname = queryNachname;
+        this.kid = kid;
+        this.vorname=vorname;
+        this.nachname=nachname;
+        this.strasse=strasse;
+        this.plzStadt=plzStadt;
+        this.kundenart=kundenart;
         holeKunde(queryVorname, queryNachname, kid, vorname, nachname, strasse, plzStadt, kundenart);
     }
 
@@ -75,7 +81,7 @@ public class Kunde {
 
     @Override
     public String toString() {
-        return "Kunde{" + "queryVorname=" + queryVorname + ", queryNachname=" + queryNachname + ", kid=" + kid.value + ", vorname=" + vorname.value + ", nachname=" + nachname.value + ", strasse=" + strasse.value + ", plzStadt=" + plzStadt.value + ", kundenart=" + kundenart.value + '}';
+        return "kid=" + kid.value + "\n" + "vorname=" + vorname.value + "\n" +"nachname=" + nachname.value + "\n" + "strasse=" + strasse.value + "\n" + "plzStadt=" + plzStadt.value + "\n" + "kundenart=" + kundenart.value + "\n" + "_________________________"+ "\n";
     }
     
     

@@ -11,20 +11,26 @@ import javax.xml.ws.Holder;
  *
  * @author marcomancuso
  */
-public class Maessgeraet {
+public class Messung {
     
         int queryMessID;
-        Holder<Integer> messID2 = new Holder();
+        Holder<Integer> messID = new Holder();
         Holder<Integer> kid2 = new Holder();
         Holder<String> messgegenstand = new Holder();
         Holder<Float> wert = new Holder();
         Holder<String> ausfuehrung = new Holder();
         Holder<String> tarifplan = new Holder();
 
-    public Maessgeraet() {
+    public Messung(int queryMessID) {
         
         this.queryMessID = queryMessID;
-        holeMessgeraet(queryMessID, messID2, kid2, messgegenstand, wert, ausfuehrung, tarifplan);
+        this.messID=messID;
+        this.kid2=kid2;
+        this.messgegenstand=messgegenstand;
+        this.wert=wert;
+        this.ausfuehrung=ausfuehrung;
+        this.tarifplan=tarifplan;
+        holeMessgeraet(queryMessID, messID, kid2, messgegenstand, wert, ausfuehrung, tarifplan);
         
     }
 
@@ -39,7 +45,7 @@ public class Maessgeraet {
     }
 
     public Holder<Integer> getMessID2() {
-        return messID2;
+        return messID;
     }
 
     public Holder<Integer> getKid2() {
@@ -64,7 +70,7 @@ public class Maessgeraet {
 
     @Override
     public String toString() {
-        return "Maessgeraet{" + "queryMessID=" + queryMessID + ", messID2=" + messID2.value + ", kid2=" + kid2.value + ", messgegenstand=" + messgegenstand.value + ", wert=" + wert.value + ", ausfuehrung=" + ausfuehrung.value + ", tarifplan=" + tarifplan.value + '}';
+        return "messID=" + messID.value +"\n" + "kid2=" + kid2.value +"\n" +"messgegenstand=" + messgegenstand.value +"\n" + "wert=" + wert.value +"\n" +"ausfuehrung=" + ausfuehrung.value +"\n" +"tarifplan=" + tarifplan.value+"\n"+ "_________________________"+ "\n";
     }
         
         

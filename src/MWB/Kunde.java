@@ -73,11 +73,11 @@ public class Kunde {
         port.holeKunde(queryVorname, queryNachname, kid, vorname, nachname, strasse, plzStadt, kundenart);
     }
 
-    private static java.util.List<java.lang.String> listeKundeNachname() {
-        ch.fhnw.wi.eai.mwb.MWBService service = new ch.fhnw.wi.eai.mwb.MWBService();
-        ch.fhnw.wi.eai.mwb.MWB port = service.getMWBPort();
-        return port.listeKundeNachname();
-    }
+//    private static java.util.List<java.lang.String> listeKundeNachname() {
+//        ch.fhnw.wi.eai.mwb.MWBService service = new ch.fhnw.wi.eai.mwb.MWBService();
+//        ch.fhnw.wi.eai.mwb.MWB port = service.getMWBPort();
+//        return port.listeKundeNachname();
+//    }
 
     @Override
     public String toString() {

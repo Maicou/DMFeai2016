@@ -25,17 +25,6 @@ import javax.xml.ws.Holder;
  */
 public class Main {
 
-//   private static void holeKunde(java.lang.String queryVorname, java.lang.String queryNachname, javax.xml.ws.Holder<java.lang.Integer> kid, javax.xml.ws.Holder<java.lang.String> vorname, javax.xml.ws.Holder<java.lang.String> nachname, javax.xml.ws.Holder<java.lang.String> strasse, javax.xml.ws.Holder<java.lang.String> plzStadt, javax.xml.ws.Holder<java.lang.String> kundenart) {
-//        ch.fhnw.wi.eai.mwb.MWBService service = new ch.fhnw.wi.eai.mwb.MWBService();
-//        ch.fhnw.wi.eai.mwb.MWB port = service.getMWBPort();
-//        port.holeKunde(queryVorname, queryNachname, kid, vorname, nachname, strasse, plzStadt, kundenart);
-//    }
-//
-//    private static void holeMessgeraet(int queryMessID, javax.xml.ws.Holder<java.lang.Integer> messID, javax.xml.ws.Holder<java.lang.Integer> kid, javax.xml.ws.Holder<java.lang.String> messgegenstand, javax.xml.ws.Holder<java.lang.Float> wert, javax.xml.ws.Holder<java.lang.String> ausfuehrung, javax.xml.ws.Holder<java.lang.String> tarifplan) {
-//        ch.fhnw.wi.eai.mwb.MWBService service = new ch.fhnw.wi.eai.mwb.MWBService();
-//        ch.fhnw.wi.eai.mwb.MWB port = service.getMWBPort();
-//        port.holeMessgeraet(queryMessID, messID, kid, messgegenstand, wert, ausfuehrung, tarifplan);
-//    } 
     private static java.util.List<java.lang.String> listeKundeNachname() {
         ch.fhnw.wi.eai.mwb.MWBService service = new ch.fhnw.wi.eai.mwb.MWBService();
         ch.fhnw.wi.eai.mwb.MWB port = service.getMWBPort();

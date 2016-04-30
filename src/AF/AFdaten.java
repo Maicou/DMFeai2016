@@ -19,6 +19,12 @@ import java.util.logging.Logger;
  * @author Marco Mancuso
  */
 public class AFdaten {
+    
+    ArrayList<Kunde> KundenListe = new ArrayList<Kunde>();
+
+    public ArrayList<Kunde> getKundenListe() {
+        return KundenListe;
+    }
 
     public AFdaten() {
 
@@ -30,7 +36,7 @@ public class AFdaten {
             String StringSplitBy = ",";
             String space = " ";
             ArrayList<String> CleanedList = new ArrayList<String>();
-            ArrayList<AFKundenDaten> KundenOhneFirmen = new ArrayList<AFKundenDaten>();
+       //     ArrayList<AFKundenDaten> KundenOhneFirmen = new ArrayList<AFKundenDaten>();
 
             br = new BufferedReader(new FileReader(csvFile));
             while ((Words = br.readLine()) != null) {
@@ -50,25 +56,24 @@ public class AFdaten {
 
                 }
 
-                //System.out.println(CleanedList.toString());
-               
-               
                 AFKundenDaten TestDaten = new AFKundenDaten(CleanedList);
-                if(TestDaten.ID == null){
-                    
-                } else{
-                System.out.println(TestDaten.toString());
-                System.out.println("\n");
-//                   KundenOhneFirmen.add(TestDaten);
-//                   System.out.println(KundenOhneFirmen.toString());
-//               
+                if (TestDaten.ID == null) {
+
+                } else {
+                    Kunde Kunde = new Kunde(TestDaten);
+                    KundenListe.add(Kunde);
+
+                 //   System.out.println(TestDaten.toString());
+                 //   System.out.println("\n");
+
                 }
                 CleanedList.removeAll(CleanedList);
-               
 
-                
-                
             }
+            System.out.println("KUNDEN AUS AF - - - - - - - - - - - - - - - -");
+            System.out.println(KundenListe.toString());
+            
+            
         } catch (FileNotFoundException ex) {
             Logger.getLogger(AFdaten.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {

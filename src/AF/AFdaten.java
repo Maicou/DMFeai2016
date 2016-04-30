@@ -10,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -24,20 +25,49 @@ public class AFdaten {
         try {
             String csvFile = "./src/AF/Messung.csv";
             BufferedReader br = null;
-            String line = "";
-            String cvsSplitBy = ",";
+            String Words = "";
+
+            String StringSplitBy = ",";
+            String space = " ";
+            ArrayList<String> CleanedList = new ArrayList<String>();
+            ArrayList<AFKundenDaten> KundenOhneFirmen = new ArrayList<AFKundenDaten>();
 
             br = new BufferedReader(new FileReader(csvFile));
-            while ((line = br.readLine()) != null) {
+            while ((Words = br.readLine()) != null) {
 
                 // use comma as separator
-                String[] messung = line.split(cvsSplitBy);
-                int numOfWords = messung.length;
-                for (int i = 0; i < numOfWords; i++) {
-                    System.out.println(messung[i]);
-                }
-                System.out.println("\n");
+                String[] messung = Words.split(StringSplitBy);
+                String[] SeparatedStrings;
+                int numOfStrings = messung.length;
+                for (int i = 0; i < numOfStrings; i++) {
 
+                    SeparatedStrings = messung[i].split(space);
+
+                    for (int j = 0; j < SeparatedStrings.length; j++) {
+
+                        CleanedList.add(SeparatedStrings[j]);
+                    }
+
+                }
+
+                //System.out.println(CleanedList.toString());
+               
+               
+                AFKundenDaten TestDaten = new AFKundenDaten(CleanedList);
+                if(TestDaten.ID == null){
+                    
+                } else{
+                System.out.println(TestDaten.toString());
+                System.out.println("\n");
+//                   KundenOhneFirmen.add(TestDaten);
+//                   System.out.println(KundenOhneFirmen.toString());
+//               
+                }
+                CleanedList.removeAll(CleanedList);
+               
+
+                
+                
             }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(AFdaten.class.getName()).log(Level.SEVERE, null, ex);

@@ -6,6 +6,7 @@
 package dmfeai2016;
 
 import AF.AFdaten;
+import AF.MatchingKundenAF;
 import MWB.Kunde;
 import MWB.Messung;
 import java.io.BufferedReader;
@@ -88,7 +89,7 @@ public class Main {
         System.out.println(AlleMessgeraete.toString());
 
         //Auslagerung csv Datenaufruf in AF package
-        AFdaten NewData = new AFdaten();
-
+        //AFdaten NewData = new AFdaten();
+        MatchingKundenAF startMatching = new MatchingKundenAF();
     }
 }

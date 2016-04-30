@@ -12,31 +12,46 @@ package AF;
 public class Kunde {
     
     
-    String ID;
+    private static long Number = 0;
+    long ID;
     String Vorname;
     String Nachname;
     String Messgegenstand;
-    String Wert;
+    double Wert;
     String Datum;
     String Gerätetyp;
     String Ausführung;
 
     public Kunde(AFKundenDaten TestDaten) {
-        this.ID = TestDaten.ID;
+        
+        this.ID = Number;
+        Number++;
         this.Vorname = TestDaten.Vorname;
         this.Nachname = TestDaten.Nachname;
         this.Messgegenstand = TestDaten.Messgegenstand;
-        this.Wert = TestDaten.Wert;
+        this.Wert = Double.parseDouble(TestDaten.Wert);
         this.Datum = TestDaten.Datum;
         this.Gerätetyp = TestDaten.Gerätetyp;
         this.Ausführung = TestDaten.Ausführung;
     }
 
-    public String getID() {
-        return ID;
+    public Kunde(String Vorname, String Nachname, String Messgegenstand, double Wert, String Datum, String Gerätetyp, String Ausführung) {
+        this.ID = Number;
+        Number++;
+        this.Vorname = Vorname;
+        this.Nachname = Nachname;
+        this.Messgegenstand = Messgegenstand;
+        this.Wert = Wert;
+        this.Datum = Datum;
+        this.Gerätetyp = Gerätetyp;
+        this.Ausführung = Ausführung;
+    } 
+
+   public long getID() {
+       return ID;
     }
 
-    public void setID(String ID) {
+    public void setID(long ID) {
         this.ID = ID;
     }
 
@@ -64,11 +79,11 @@ public class Kunde {
         this.Messgegenstand = Messgegenstand;
     }
 
-    public String getWert() {
+    public Double getWert() {
         return Wert;
     }
 
-    public void setWert(String Wert) {
+    public void setWert(Double Wert) {
         this.Wert = Wert;
     }
 
@@ -98,7 +113,7 @@ public class Kunde {
 
     @Override
     public String toString() {
-        return "ID=" + ID+ "\n" + "Vorname=" + Vorname + "\n" + "Nachname=" + Nachname + "\n" + "Messgegenstand=" + Messgegenstand + "\n" + "Wert=" + Wert+ "\n" + "Datum=" + Datum + "\n"+ "Ger\u00e4tetyp=" + Gerätetyp+ "\n" + "Ausf\u00fchrung=" + Ausführung+ "\n" + "_________________________"+ "\n";
+        return "Vorname=" + Vorname + "\n" + "Nachname=" + Nachname + "\n" + "Messgegenstand=" + Messgegenstand + "\n" + "Wert=" + Wert+ "\n" + "Datum=" + Datum + "\n"+ "Ger\u00e4tetyp=" + Gerätetyp+ "\n" + "Ausf\u00fchrung=" + Ausführung+ "\n" + "_________________________"+ "\n";
     }
     
     

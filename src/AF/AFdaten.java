@@ -63,15 +63,15 @@ public class AFdaten {
                     Kunde Kunde = new Kunde(TestDaten);
                     KundenListe.add(Kunde);
 
-                 //   System.out.println(TestDaten.toString());
-                 //   System.out.println("\n");
 
                 }
                 CleanedList.removeAll(CleanedList);
 
             }
+            Kunde Ende = new Kunde("Ende", "der", "Kunden", -1, null, null, null);
+            KundenListe.add(Ende);
             System.out.println("KUNDEN AUS AF - - - - - - - - - - - - - - - -");
-            System.out.println(KundenListe.toString());
+           // System.out.println(KundenListe.toString());
             
             
         } catch (FileNotFoundException ex) {

@@ -11,18 +11,19 @@ package Zielsystem;
  */
 public class Messpunkt {
     
-    private static long id =1;
+    private static long MID =1;
     private long fid;
     private String geraetetyp;
     private double wert;
     private String tarif;
     private String name;
     private String adresse;
+    private long id;
 
     
     
-    public Messpunkt(long id, long fid, String geraetetyp, double wert, String tarif, String name, String adresse) {
-        this.id = id;
+    public Messpunkt(long fid, String geraetetyp, double wert, String tarif, String name, String adresse) {
+        this.id = MID;
         this.fid = fid;
         this.geraetetyp = geraetetyp;
         this.wert = wert;
@@ -30,16 +31,16 @@ public class Messpunkt {
         this.name = name;
         this.adresse = adresse;
         
-        id++;
+        MID++;
         
     }
 
     public long getId() {
-        return id;
+        return MID;
     }
 
     public void setId(long id) {
-        this.id = id;
+        this.MID = id;
     }
 
     public long getFid() {
@@ -89,5 +90,13 @@ public class Messpunkt {
     public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
+
+    @Override
+    public String toString() {
+        return "Messpunkt{" +"id="+id+ ", fid=" + fid + ", geraetetyp=" + geraetetyp + ", wert=" + wert + ", tarif=" + tarif + ", name=" + name + ", adresse=" + adresse + '}';
+    }
+    
+    
+    
     
 }

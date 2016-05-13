@@ -6,6 +6,7 @@
 package Zielsystem;
 
 import MWB.Kunde;
+import MWB.Messung;
 import java.util.ArrayList;
 
 /**
@@ -16,15 +17,14 @@ public class Matching {
 
     private ArrayList<MWB.Kunde> MWBKunden;
     private ArrayList<AF.Kunde> AFKunden;
-    public ArrayList<String> NamenListeMWB;
-    public ArrayList<String> NamenListeAF;
+    public ArrayList<Messpunkt> Messpunkte;
 
     public Matching(ArrayList<Kunde> MWBKunden, ArrayList<AF.Kunde> AFKunden) {
         this.MWBKunden = MWBKunden;
         this.AFKunden = AFKunden;
         kreiereFirmen();
-        NamenListeMWB = namenMWB();
-        NamenListeAF = namenAF();
+        Messpunkte = erstelleMessungen();
+        System.out.println(Messpunkte.toString());
     }
 
     public void kreiereFirmen() {
@@ -33,32 +33,36 @@ public class Matching {
     }
 
     /**
-     * 
-     * @return die NamenListen 
+     *
+     * @return die NamenListen
      */
-    public ArrayList<String> namenMWB() {
-        ArrayList<String> Namenliste = new ArrayList<String>();
+  
+
+    public ArrayList<Messpunkt> erstelleMessungen() {
+        ArrayList<Messpunkt> ListeMitMessungen = new ArrayList<Messpunkt>();
+
+        String Geraetetyp;
         String Name;
-        for (Kunde kunde : MWBKunden) {
-            Name = kunde.getVorname().value + " " + kunde.getNachname().value;
-            Namenliste.add(Name);
-        }
-        return Namenliste;
-    }
-    public ArrayList<String> namenAF() {
-        ArrayList<String> Namenliste = new ArrayList<String>();
-        String Name;
-        for (AF.Kunde kunde : AFKunden) {
-            Name = kunde.getVorname() + " " + kunde.getNachname();
-            Namenliste.add(Name);
+        String Adresse;
+        ArrayList<Messung> Liste;
+
+        for (MWB.Kunde Kunde : MWBKunden) {
+            Liste = Kunde.getMessungenDesKunden();
+            for (int i = 0; i < Liste.size(); i++) {
+                if (Liste.get(i).getMessgegenstand().value.contentEquals("Wasser")) {
+                    continue;
+                }
+                Geraetetyp = Liste.get(i).getAusfuehrung().value;
+                Name = Kunde.getVorname().value + " " + Kunde.getNachname().value;
+                Adresse = Kunde.getStrasse().value + " " + Kunde.getPlzStadt().value;
+                Messpunkt messpunkt = new Messpunkt(1, Geraetetyp, Liste.get(i).getWert().value, Liste.get(i).getTarifplan().value, Name, Adresse);
+                ListeMitMessungen.add(messpunkt);
+
+            }
+
         }
 
-        return Namenliste;
+        return ListeMitMessungen;
     }
-    
-    
-    
-    
-    
 
 }

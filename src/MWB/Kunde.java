@@ -23,7 +23,7 @@ public class Kunde {
     Holder<String> strasse = new Holder();
     Holder<String> plzStadt = new Holder();
     Holder<String> kundenart = new Holder();
-   // List<String> kundeNachname;
+   
     List ListeMitZuteilung;
     ArrayList<Messung> ALLEMESSUNGEN;
     ArrayList<Messung> MessungenDesKunden = new ArrayList<Messung>();
@@ -69,6 +69,10 @@ public class Kunde {
         return kid;
     }
 
+    public ArrayList<Messung> getMessungenDesKunden() {
+        return MessungenDesKunden;
+    }
+
     public Holder<String> getVorname() {
         return vorname;
     }
@@ -105,7 +109,7 @@ public class Kunde {
 
     @Override
     public String toString() {
-        return "kid=" + kid.value + "\n" + "vorname=" + vorname.value + "\n" +"nachname=" + nachname.value + "\n" + "strasse=" + strasse.value + "\n" + "plzStadt=" + plzStadt.value + "\n" + "kundenart=" + kundenart.value + "\n" +"Meine Messungen = " + MessungenDesKunden + "\n" + "_________________________"+ "\n";
+        return "kid=" + kid.value + "\n" + "vorname=" + vorname.value + "\n" +"nachname=" + nachname.value + "\n" + "strasse=" + strasse.value + "\n" + "plzStadt=" + plzStadt.value + "\n" + "kundenart=" + kundenart.value + "\n" +"Meine Messungen = " + MessungenDesKunden.size() + "\n" + "_________________________"+ "\n";
     }
 
     private static java.util.List<java.lang.String> listeKundeNachname() {

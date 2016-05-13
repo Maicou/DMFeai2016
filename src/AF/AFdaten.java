@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  * @author Marco Mancuso
  */
 public class AFdaten {
-    
+
     ArrayList<Kunde> KundenListe = new ArrayList<Kunde>();
 
     public ArrayList<Kunde> getKundenListe() {
@@ -36,7 +36,7 @@ public class AFdaten {
             String StringSplitBy = ",";
             String space = " ";
             ArrayList<String> CleanedList = new ArrayList<String>();
-       //     ArrayList<AFKundenDaten> KundenOhneFirmen = new ArrayList<AFKundenDaten>();
+            //     ArrayList<AFKundenDaten> KundenOhneFirmen = new ArrayList<AFKundenDaten>();
 
             br = new BufferedReader(new FileReader(csvFile));
             while ((Words = br.readLine()) != null) {
@@ -63,7 +63,6 @@ public class AFdaten {
                     Kunde Kunde = new Kunde(TestDaten);
                     KundenListe.add(Kunde);
 
-
                 }
                 CleanedList.removeAll(CleanedList);
 
@@ -71,9 +70,8 @@ public class AFdaten {
             Kunde Ende = new Kunde("Ende", "der", "Kunden", -1, null, null, null);
             KundenListe.add(Ende);
             System.out.println("KUNDEN AUS AF - - - - - - - - - - - - - - - -");
-           // System.out.println(KundenListe.toString());
-            
-            
+            // System.out.println(KundenListe.toString());
+
         } catch (FileNotFoundException ex) {
             Logger.getLogger(AFdaten.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {

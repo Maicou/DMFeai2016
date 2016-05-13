@@ -58,7 +58,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        // holeKunde(queryVorname,queryNachname,kid,vorname,nachname,strasse,plzStadt,kundenart);
         List<String> kundeNachname = new ArrayList();
         kundeNachname = listeKundeNachname();
         ArrayList<Kunde> AlleKunden = new ArrayList();
@@ -72,10 +71,6 @@ public class Main {
         List<Integer> messIdForCustomer = new ArrayList();
         for (int i = 1; i <= kundeNachname.size(); i++) {
             messIdForCustomer = listeMessIDForCustomer(i);
-           // System.out.println("Messids für Customer "
-             //       + // AlleKunden.get(i).getKid().value 
-               //     i
-                 //   + " " + messIdForCustomer);
 
         }
 
@@ -92,21 +87,17 @@ public class Main {
         }
         System.out.println("KUNDEN AUS MWB - - - - - - - - - - - - - - - -");
         System.out.println(AlleKunden.toString());
-        // int numberOfCustomer = kundeNachname.size();
-
-        System.out.println("Alle MessIDs " + messIDs);
-
-        System.out.println("Anzahl Customer: " + kundeNachname.size());
 
         System.out.println("\nMESSUNGEN AUS MWB - - - - - - - - - - - - - - - -");
         System.out.println(AlleMessgeraete.toString());
 
         //Auslagerung csv Datenaufruf in AF package
-        //AFdaten NewData = new AFdaten();
         MatchingKundenAF startMatching = new MatchingKundenAF();
         Matching Test = new Matching(AlleKunden, startMatching.KundenListeBereinigt);
-        System.out.println(Test.NamenListeMWB.toString());
-        System.out.println(Test.NamenListeAF.toString());
+       // System.out.println(Test.NamenListeMWB.toString());
+       // System.out.println(Test.NamenListeAF.toString());
+        
+        
 
     }
 }

@@ -9,6 +9,7 @@ import AF.AFdaten;
 import AF.MatchingKundenAF;
 import MWB.Kunde;
 import MWB.Messung;
+import Zielsystem.Matching;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -62,34 +63,50 @@ public class Main {
         kundeNachname = listeKundeNachname();
         ArrayList<Kunde> AlleKunden = new ArrayList();
         ArrayList<Messung> AlleMessgeraete = new ArrayList();
-        for (int i = 0; i < kundeNachname.size(); i++) {
-            Kunde KundeMWB = new Kunde(kundeNachname.get(i));
-            AlleKunden.add(KundeMWB);
-        }
-        System.out.println("KUNDEN AUS MWB - - - - - - - - - - - - - - - -");
-        System.out.println(AlleKunden.toString());
-        int numberOfCustomer = kundeNachname.size();
-
         List<Integer> messIDs = new ArrayList();
         messIDs = listeMessID();
-        System.out.println("Alle MessIDs " + messIDs);
-
-        System.out.println("Anzahl Customer: " + numberOfCustomer);
-
-        List<Integer> messIdForCustomer = new ArrayList();
-        for (int i = 1; i <= numberOfCustomer; i++) {
-            messIdForCustomer = listeMessIDForCustomer(i);
-            System.out.println("Messids für Customer " + i + " " + messIdForCustomer);
-        }
         for (int i = 1; i <= messIDs.size(); i++) {
             Messung Messgeraet = new Messung(i);
             AlleMessgeraete.add(Messgeraet);
         }
+        List<Integer> messIdForCustomer = new ArrayList();
+        for (int i = 1; i <= kundeNachname.size(); i++) {
+            messIdForCustomer = listeMessIDForCustomer(i);
+           // System.out.println("Messids für Customer "
+             //       + // AlleKunden.get(i).getKid().value 
+               //     i
+                 //   + " " + messIdForCustomer);
+
+        }
+
+        for (int i = 0; i < kundeNachname.size(); i++) {
+            Kunde KundeMWB = new Kunde(kundeNachname.get(i), AlleMessgeraete);
+
+            String Name = KundeMWB.getVorname().value + " " + KundeMWB.getNachname().value;
+            if (Name.contains("AG") || Name.contains("GmbH")) {
+                continue;
+            }
+
+            AlleKunden.add(KundeMWB);
+
+        }
+        System.out.println("KUNDEN AUS MWB - - - - - - - - - - - - - - - -");
+        System.out.println(AlleKunden.toString());
+        // int numberOfCustomer = kundeNachname.size();
+
+        System.out.println("Alle MessIDs " + messIDs);
+
+        System.out.println("Anzahl Customer: " + kundeNachname.size());
+
         System.out.println("\nMESSUNGEN AUS MWB - - - - - - - - - - - - - - - -");
         System.out.println(AlleMessgeraete.toString());
 
         //Auslagerung csv Datenaufruf in AF package
         //AFdaten NewData = new AFdaten();
         MatchingKundenAF startMatching = new MatchingKundenAF();
+        Matching Test = new Matching(AlleKunden, startMatching.KundenListeBereinigt);
+        System.out.println(Test.NamenListeMWB.toString());
+        System.out.println(Test.NamenListeAF.toString());
+
     }
 }

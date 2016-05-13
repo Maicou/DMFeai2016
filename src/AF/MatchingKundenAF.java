@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class MatchingKundenAF {
 
-    ArrayList<Kunde> KundenListeBereinigt = new ArrayList<Kunde>();
+   public ArrayList<Kunde> KundenListeBereinigt = new ArrayList<Kunde>();
 
     public MatchingKundenAF() {
 

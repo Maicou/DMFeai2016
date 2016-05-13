@@ -32,6 +32,7 @@ public class Messung {
         this.tarifplan=tarifplan;
         holeMessgeraet(queryMessID, messID, kid2, messgegenstand, wert, ausfuehrung, tarifplan);
         
+        
     }
 
     private static void holeMessgeraet(int queryMessID, javax.xml.ws.Holder<java.lang.Integer> messID, javax.xml.ws.Holder<java.lang.Integer> kid, javax.xml.ws.Holder<java.lang.String> messgegenstand, javax.xml.ws.Holder<java.lang.Float> wert, javax.xml.ws.Holder<java.lang.String> ausfuehrung, javax.xml.ws.Holder<java.lang.String> tarifplan) {

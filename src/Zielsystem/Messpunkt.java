@@ -93,7 +93,7 @@ public class Messpunkt {
 
     @Override
     public String toString() {
-        return "Messpunkt{" +"id="+id+ ", fid=" + fid + ", geraetetyp=" + geraetetyp + ", wert=" + wert + ", tarif=" + tarif + ", name=" + name + ", adresse=" + adresse + '}';
+        return "| ID="+id+ " | FID=" + fid + " | Gerätetyp=" + geraetetyp + " | Wert=" + wert + " | Tarif=" + tarif + " | Name=" + name + " | Adresse=" + adresse + " |";
     }
     
     

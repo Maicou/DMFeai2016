@@ -20,7 +20,7 @@ public class Kunde {
     double Wert;
     String Datum;
     String Gerätetyp;
-    String Ausführung;
+    String Preisplan;
 
     public Kunde(AFKundenDaten TestDaten) {
         
@@ -32,7 +32,7 @@ public class Kunde {
         this.Wert = Double.parseDouble(TestDaten.Wert);
         this.Datum = TestDaten.Datum;
         this.Gerätetyp = TestDaten.Gerätetyp;
-        this.Ausführung = TestDaten.Ausführung;
+        this.Preisplan = TestDaten.Ausführung;
     }
 
     public Kunde(String Vorname, String Nachname, String Messgegenstand, double Wert, String Datum, String Gerätetyp, String Ausführung) {
@@ -44,7 +44,7 @@ public class Kunde {
         this.Wert = Wert;
         this.Datum = Datum;
         this.Gerätetyp = Gerätetyp;
-        this.Ausführung = Ausführung;
+        this.Preisplan = Ausführung;
     } 
 
    public long getID() {
@@ -104,16 +104,16 @@ public class Kunde {
     }
 
     public String getAusführung() {
-        return Ausführung;
+        return Preisplan;
     }
 
     public void setAusführung(String Ausführung) {
-        this.Ausführung = Ausführung;
+        this.Preisplan = Ausführung;
     }
 
     @Override
     public String toString() {
-        return "Vorname=" + Vorname + "\n" + "Nachname=" + Nachname + "\n" + "Messgegenstand=" + Messgegenstand + "\n" + "Wert=" + Wert+ "\n" + "Datum=" + Datum + "\n"+ "Ger\u00e4tetyp=" + Gerätetyp+ "\n" + "Ausf\u00fchrung=" + Ausführung+ "\n" + "_________________________"+ "\n";
+        return "Vorname=" + Vorname + "\n" + "Nachname=" + Nachname + "\n" + "Messgegenstand=" + Messgegenstand + "\n" + "Wert=" + Wert+ "\n" + "Datum=" + Datum + "\n"+ "Ger\u00e4tetyp=" + Gerätetyp+ "\n" + "Preisplan=" + Preisplan+ "\n" + "_________________________"+ "\n";
     }
     
     

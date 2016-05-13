@@ -93,7 +93,7 @@ public class Main {
 
         //Auslagerung csv Datenaufruf in AF package
         MatchingKundenAF startMatching = new MatchingKundenAF();
-        Matching Test = new Matching(AlleKunden, startMatching.KundenListeBereinigt);
+        Matching Test = new Matching(AlleKunden, startMatching.getKundenListeBereinigt());
        // System.out.println(Test.NamenListeMWB.toString());
        // System.out.println(Test.NamenListeAF.toString());
         

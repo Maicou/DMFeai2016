@@ -64,5 +64,10 @@ public class Firma {
         this.stadt = stadt;
     }
 
+    @Override
+    public String toString() {
+        return "| FID=" + fid + " | Name=" + name + " | Strasse=" + strasse + " | PLZ=" + plz + " | Stadt=" + stadt + " |";
+    }
+
     
 }

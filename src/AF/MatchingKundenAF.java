@@ -17,7 +17,7 @@ public class MatchingKundenAF {
         return KundenListeBereinigt;
     }
 
-   public ArrayList<Kunde> KundenListeBereinigt = new ArrayList<Kunde>();
+    public ArrayList<Kunde> KundenListeBereinigt = new ArrayList<Kunde>();
 
     public MatchingKundenAF() {
 
@@ -29,7 +29,6 @@ public class MatchingKundenAF {
 
     private ArrayList<Kunde> zusammenfuehren(ArrayList<Kunde> KundenListe) {
 
-        //hier sollen die Kundenwerte aus der KundenListe noch addiert werden!
         ArrayList<Kunde> KundenListeBereinigt = new ArrayList<Kunde>();
         double Wert = KundenListe.get(0).getWert();
         for (int i = 1; i < KundenListe.size(); i++) {

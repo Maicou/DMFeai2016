@@ -10,6 +10,7 @@ package Zielsystem;
  * @author Faruk
  */
 public class Firma {
+
     private long fid;
     private String name;
     private String strasse;
@@ -69,5 +70,4 @@ public class Firma {
         return "| FID=" + fid + " | Name=" + name + " | Strasse=" + strasse + " | PLZ=" + plz + " | Stadt=" + stadt + " |";
     }
 
-    
 }

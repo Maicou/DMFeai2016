@@ -25,35 +25,34 @@ public class AFKundenDaten {
     String Ausführung;
 
     public AFKundenDaten(ArrayList<String> Liste) {
-      
 
-        if(Liste.size()< 8){
-           
-        } else if(Liste.size() == 8){
+        if (Liste.size() < 8) {
 
-        this.ID = Liste.get(0);
-        this.Vorname = Liste.get(1);
-        this.Nachname1 = Liste.get(2);
-       
-        this.Nachname = Nachname1;
-        this.Messgegenstand = Liste.get(3);
-        this.Wert = Liste.get(4);
-        this.Datum = Liste.get(5);
-        this.Gerätetyp = Liste.get(6);
-        this.Ausführung = Liste.get(7);
-            
-        } else if(Liste.size()>8){
+        } else if (Liste.size() == 8) {
 
-        this.ID = Liste.get(0);
-        this.Vorname = Liste.get(1);
-        this.Nachname1 = Liste.get(2);
-        this.Nachname2 = Liste.get(3);
-        this.Nachname = Nachname1 +" " + Nachname2;
-        this.Messgegenstand = Liste.get(4);
-        this.Wert = Liste.get(5);
-        this.Datum = Liste.get(6);
-        this.Gerätetyp = Liste.get(7);
-        this.Ausführung = Liste.get(8);
+            this.ID = Liste.get(0);
+            this.Vorname = Liste.get(1);
+            this.Nachname1 = Liste.get(2);
+
+            this.Nachname = Nachname1;
+            this.Messgegenstand = Liste.get(3);
+            this.Wert = Liste.get(4);
+            this.Datum = Liste.get(5);
+            this.Gerätetyp = Liste.get(6);
+            this.Ausführung = Liste.get(7);
+
+        } else if (Liste.size() > 8) {
+
+            this.ID = Liste.get(0);
+            this.Vorname = Liste.get(1);
+            this.Nachname1 = Liste.get(2);
+            this.Nachname2 = Liste.get(3);
+            this.Nachname = Nachname1 + " " + Nachname2;
+            this.Messgegenstand = Liste.get(4);
+            this.Wert = Liste.get(5);
+            this.Datum = Liste.get(6);
+            this.Gerätetyp = Liste.get(7);
+            this.Ausführung = Liste.get(8);
         }
 
     }
@@ -142,7 +141,5 @@ public class AFKundenDaten {
     public String toString() {
         return "AFKundenDaten{" + "ID=" + ID + ", Vorname=" + Vorname + ", Nachname1=" + Nachname1 + ", Nachname2=" + Nachname2 + ", Nachname=" + Nachname + ", Messgegenstand=" + Messgegenstand + ", Wert=" + Wert + ", Datum=" + Datum + ", Ger\u00e4tetyp=" + Gerätetyp + ", Ausf\u00fchrung=" + Ausführung + '}';
     }
-
-  
 
 }

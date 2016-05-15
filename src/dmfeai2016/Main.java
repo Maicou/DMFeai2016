@@ -5,21 +5,12 @@
  */
 package dmfeai2016;
 
-import AF.AFdaten;
 import AF.MatchingKundenAF;
 import MWB.Kunde;
 import MWB.Messung;
 import Zielsystem.Matching;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import javax.xml.ws.Holder;
 
 /**
  *
@@ -43,18 +34,6 @@ public class Main {
         ch.fhnw.wi.eai.mwb.MWBService service = new ch.fhnw.wi.eai.mwb.MWBService();
         ch.fhnw.wi.eai.mwb.MWB port = service.getMWBPort();
         return port.listeMessIDForCustomer(queryKID);
-    }
-
-    private static void printKunde() {
-        ch.fhnw.wi.eai.mwb.MWBService service = new ch.fhnw.wi.eai.mwb.MWBService();
-        ch.fhnw.wi.eai.mwb.MWB port = service.getMWBPort();
-        port.printKunde();
-    }
-
-    private static void printMessgeraete() {
-        ch.fhnw.wi.eai.mwb.MWBService service = new ch.fhnw.wi.eai.mwb.MWBService();
-        ch.fhnw.wi.eai.mwb.MWB port = service.getMWBPort();
-        port.printMessgeraete();
     }
 
     public static void main(String[] args) {
@@ -83,21 +62,13 @@ public class Main {
             }
 
             AlleKunden.add(KundeMWB);
-
         }
         System.out.println("KUNDEN AUS MWB - - - - - - - - - - - - - - - -");
         System.out.println(AlleKunden.toString());
-
         System.out.println("\nMESSUNGEN AUS MWB - - - - - - - - - - - - - - - -");
         System.out.println(AlleMessgeraete.toString());
-
-        //Auslagerung csv Datenaufruf in AF package
         MatchingKundenAF startMatching = new MatchingKundenAF();
         Matching Test = new Matching(AlleKunden, startMatching.getKundenListeBereinigt());
-       // System.out.println(Test.NamenListeMWB.toString());
-       // System.out.println(Test.NamenListeAF.toString());
-        
-        
 
     }
 }

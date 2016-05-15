@@ -10,8 +10,7 @@ package AF;
  * @author Marco Mancuso
  */
 public class Kunde {
-    
-    
+
     private static long Number = 0;
     long ID;
     String Vorname;
@@ -23,7 +22,7 @@ public class Kunde {
     String Preisplan;
 
     public Kunde(AFKundenDaten TestDaten) {
-        
+
         this.ID = Number;
         Number++;
         this.Vorname = TestDaten.Vorname;
@@ -45,10 +44,10 @@ public class Kunde {
         this.Datum = Datum;
         this.Gerätetyp = Gerätetyp;
         this.Preisplan = Ausführung;
-    } 
+    }
 
-   public long getID() {
-       return ID;
+    public long getID() {
+        return ID;
     }
 
     public void setID(long ID) {
@@ -113,12 +112,7 @@ public class Kunde {
 
     @Override
     public String toString() {
-        return "Vorname=" + Vorname + "\n" + "Nachname=" + Nachname + "\n" + "Messgegenstand=" + Messgegenstand + "\n" + "Wert=" + Wert+ "\n" + "Datum=" + Datum + "\n"+ "Ger\u00e4tetyp=" + Gerätetyp+ "\n" + "Preisplan=" + Preisplan+ "\n" + "_________________________"+ "\n";
+        return "Vorname=" + Vorname + "\n" + "Nachname=" + Nachname + "\n" + "Messgegenstand=" + Messgegenstand + "\n" + "Wert=" + Wert + "\n" + "Datum=" + Datum + "\n" + "Ger\u00e4tetyp=" + Gerätetyp + "\n" + "Preisplan=" + Preisplan + "\n" + "_________________________" + "\n";
     }
-    
-    
-    
-    
-    
-    
+
 }

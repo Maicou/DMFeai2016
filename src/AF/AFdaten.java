@@ -5,7 +5,6 @@
  */
 package AF;
 
-import dmfeai2016.Main;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -36,12 +35,10 @@ public class AFdaten {
             String StringSplitBy = ",";
             String space = " ";
             ArrayList<String> CleanedList = new ArrayList<String>();
-            //     ArrayList<AFKundenDaten> KundenOhneFirmen = new ArrayList<AFKundenDaten>();
 
             br = new BufferedReader(new FileReader(csvFile));
             while ((Words = br.readLine()) != null) {
 
-                // use comma as separator
                 String[] messung = Words.split(StringSplitBy);
                 String[] SeparatedStrings;
                 int numOfStrings = messung.length;
@@ -70,7 +67,6 @@ public class AFdaten {
             Kunde Ende = new Kunde("Ende", "der", "Kunden", -1, null, null, null);
             KundenListe.add(Ende);
             System.out.println("KUNDEN AUS AF - - - - - - - - - - - - - - - -");
-            // System.out.println(KundenListe.toString());
 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(AFdaten.class.getName()).log(Level.SEVERE, null, ex);

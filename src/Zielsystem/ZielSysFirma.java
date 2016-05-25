@@ -9,7 +9,7 @@ package Zielsystem;
  *
  * @author Faruk
  */
-public class Firma {
+public class ZielSysFirma {
 
     private long fid;
     private String name;
@@ -17,7 +17,7 @@ public class Firma {
     private String plz;
     private String stadt;
 
-    public Firma(long fid, String name, String strasse, String plz, String stadt) {
+    public ZielSysFirma(long fid, String name, String strasse, String plz, String stadt) {
         this.fid = fid;
         this.name = name;
         this.strasse = strasse;

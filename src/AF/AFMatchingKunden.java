@@ -11,25 +11,25 @@ import java.util.ArrayList;
  *
  * @author Marco Mancuso
  */
-public class MatchingKundenAF {
+public class AFMatchingKunden {
 
-    public ArrayList<Kunde> getKundenListeBereinigt() {
+    public ArrayList<AFKunde> getKundenListeBereinigt() {
         return KundenListeBereinigt;
     }
 
-    public ArrayList<Kunde> KundenListeBereinigt = new ArrayList<Kunde>();
+    public ArrayList<AFKunde> KundenListeBereinigt = new ArrayList<AFKunde>();
 
-    public MatchingKundenAF() {
+    public AFMatchingKunden() {
 
-        AFdaten NewData = new AFdaten();
+        AFRohdaten NewData = new AFRohdaten();
         KundenListeBereinigt = zusammenfuehren(NewData.getKundenListe());
         System.out.println(KundenListeBereinigt.toString());
 
     }
 
-    private ArrayList<Kunde> zusammenfuehren(ArrayList<Kunde> KundenListe) {
+    private ArrayList<AFKunde> zusammenfuehren(ArrayList<AFKunde> KundenListe) {
 
-        ArrayList<Kunde> KundenListeBereinigt = new ArrayList<Kunde>();
+        ArrayList<AFKunde> KundenListeBereinigt = new ArrayList<AFKunde>();
         double Wert = KundenListe.get(0).getWert();
         for (int i = 1; i < KundenListe.size(); i++) {
 
@@ -38,7 +38,7 @@ public class MatchingKundenAF {
                 Wert = Wert + KundenListe.get(i).getWert();
 
             } else if (KundenListe.get(i).getVorname() != KundenListe.get(i - 1).getVorname()) {
-                Kunde neu = new Kunde(KundenListe.get(i - 1).getVorname(), KundenListe.get(i - 1).getNachname(),
+                AFKunde neu = new AFKunde(KundenListe.get(i - 1).getVorname(), KundenListe.get(i - 1).getNachname(),
                         KundenListe.get(i - 1).getMessgegenstand(), Wert, KundenListe.get(i - 1).getDatum(),
                         KundenListe.get(i - 1).getGerätetyp(), KundenListe.get(i - 1).getAusführung());
                 KundenListeBereinigt.add(neu);

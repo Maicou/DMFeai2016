@@ -13,7 +13,7 @@ import javax.xml.ws.Holder;
  *
  * @author marcomancuso
  */
-public class Kunde {
+public class MWBKunde {
 
     String queryVorname;
     String queryNachname;
@@ -24,10 +24,10 @@ public class Kunde {
     Holder<String> plzStadt = new Holder();
     Holder<String> kundenart = new Holder();
     List ListeMitZuteilung;
-    ArrayList<Messung> ALLEMESSUNGEN;
-    ArrayList<Messung> MessungenDesKunden = new ArrayList<Messung>();
+    ArrayList<MWBMessung> ALLEMESSUNGEN;
+    ArrayList<MWBMessung> MessungenDesKunden = new ArrayList<MWBMessung>();
 
-    public Kunde(String queryNachname, ArrayList<Messung> messungen) {
+    public MWBKunde(String queryNachname, ArrayList<MWBMessung> messungen) {
 
         this.queryVorname = queryVorname;
         this.queryNachname = queryNachname;
@@ -65,7 +65,7 @@ public class Kunde {
         return kid;
     }
 
-    public ArrayList<Messung> getMessungenDesKunden() {
+    public ArrayList<MWBMessung> getMessungenDesKunden() {
         return MessungenDesKunden;
     }
 

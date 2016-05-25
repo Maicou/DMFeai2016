@@ -9,7 +9,7 @@ package Zielsystem;
  *
  * @author Faruk
  */
-public class Messpunkt {
+public class ZielSysMesspunkt {
 
     private static long MID = 1;
     private long fid;
@@ -20,7 +20,7 @@ public class Messpunkt {
     private String adresse;
     private long id;
 
-    public Messpunkt(long fid, String geraetetyp, double wert, String tarif, String name, String adresse) {
+    public ZielSysMesspunkt(long fid, String geraetetyp, double wert, String tarif, String name, String adresse) {
         this.id = MID;
         this.fid = fid;
         this.geraetetyp = geraetetyp;

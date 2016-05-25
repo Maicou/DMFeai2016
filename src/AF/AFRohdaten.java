@@ -17,15 +17,15 @@ import java.util.logging.Logger;
  *
  * @author Marco Mancuso
  */
-public class AFdaten {
+public class AFRohdaten {
 
-    ArrayList<Kunde> KundenListe = new ArrayList<Kunde>();
+    ArrayList<AFKunde> KundenListe = new ArrayList<AFKunde>();
 
-    public ArrayList<Kunde> getKundenListe() {
+    public ArrayList<AFKunde> getKundenListe() {
         return KundenListe;
     }
 
-    public AFdaten() {
+    public AFRohdaten() {
 
         try {
             String csvFile = "./src/AF/Messung.csv";
@@ -57,21 +57,21 @@ public class AFdaten {
                 if (TestDaten.ID == null) {
 
                 } else {
-                    Kunde Kunde = new Kunde(TestDaten);
+                    AFKunde Kunde = new AFKunde(TestDaten);
                     KundenListe.add(Kunde);
 
                 }
                 CleanedList.removeAll(CleanedList);
 
             }
-            Kunde Ende = new Kunde("Ende", "der", "Kunden", -1, null, null, null);
+            AFKunde Ende = new AFKunde("Ende", "der", "Kunden", -1, null, null, null);
             KundenListe.add(Ende);
             System.out.println("KUNDEN AUS AF - - - - - - - - - - - - - - - -");
 
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(AFdaten.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AFRohdaten.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(AFdaten.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AFRohdaten.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

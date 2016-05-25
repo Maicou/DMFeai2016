@@ -5,10 +5,10 @@
  */
 package dmfeai2016;
 
-import AF.MatchingKundenAF;
-import MWB.Kunde;
-import MWB.Messung;
-import Zielsystem.Matching;
+import AF.AFMatchingKunden;
+import MWB.MWBKunde;
+import MWB.MWBMessung;
+import Zielsystem.ZielSysMatching;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,12 +39,12 @@ public class Main {
     public static void main(String[] args) {
         List<String> kundeNachname = new ArrayList();
         kundeNachname = listeKundeNachname();
-        ArrayList<Kunde> AlleKunden = new ArrayList();
-        ArrayList<Messung> AlleMessgeraete = new ArrayList();
+        ArrayList<MWBKunde> AlleKunden = new ArrayList();
+        ArrayList<MWBMessung> AlleMessgeraete = new ArrayList();
         List<Integer> messIDs = new ArrayList();
         messIDs = listeMessID();
         for (int i = 1; i <= messIDs.size(); i++) {
-            Messung Messgeraet = new Messung(i);
+            MWBMessung Messgeraet = new MWBMessung(i);
             AlleMessgeraete.add(Messgeraet);
         }
         List<Integer> messIdForCustomer = new ArrayList();
@@ -54,7 +54,7 @@ public class Main {
         }
 
         for (int i = 0; i < kundeNachname.size(); i++) {
-            Kunde KundeMWB = new Kunde(kundeNachname.get(i), AlleMessgeraete);
+            MWBKunde KundeMWB = new MWBKunde(kundeNachname.get(i), AlleMessgeraete);
 
             String Name = KundeMWB.getVorname().value + " " + KundeMWB.getNachname().value;
             if (Name.contains("AG") || Name.contains("GmbH")) {
@@ -67,8 +67,8 @@ public class Main {
         System.out.println(AlleKunden.toString());
         System.out.println("\nMESSUNGEN AUS MWB - - - - - - - - - - - - - - - -");
         System.out.println(AlleMessgeraete.toString());
-        MatchingKundenAF startMatching = new MatchingKundenAF();
-        Matching Test = new Matching(AlleKunden, startMatching.getKundenListeBereinigt());
+        AFMatchingKunden startMatching = new AFMatchingKunden();
+        ZielSysMatching Test = new ZielSysMatching(AlleKunden, startMatching.getKundenListeBereinigt());
 
     }
 }

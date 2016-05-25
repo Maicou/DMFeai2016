@@ -11,7 +11,7 @@ import javax.xml.ws.Holder;
  *
  * @author marcomancuso
  */
-public class Messung {
+public class MWBMessung {
 
     int queryMessID;
     Holder<Integer> messID = new Holder();
@@ -21,7 +21,7 @@ public class Messung {
     Holder<String> ausfuehrung = new Holder();
     Holder<String> tarifplan = new Holder();
 
-    public Messung(int queryMessID) {
+    public MWBMessung(int queryMessID) {
 
         this.queryMessID = queryMessID;
         this.messID = messID;

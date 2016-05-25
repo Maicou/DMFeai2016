@@ -9,7 +9,7 @@ package AF;
  *
  * @author Marco Mancuso
  */
-public class Kunde {
+public class AFKunde {
 
     private static long Number = 0;
     long ID;
@@ -21,7 +21,7 @@ public class Kunde {
     String Gerätetyp;
     String Preisplan;
 
-    public Kunde(AFKundenDaten TestDaten) {
+    public AFKunde(AFKundenDaten TestDaten) {
 
         this.ID = Number;
         Number++;
@@ -34,7 +34,7 @@ public class Kunde {
         this.Preisplan = TestDaten.Ausführung;
     }
 
-    public Kunde(String Vorname, String Nachname, String Messgegenstand, double Wert, String Datum, String Gerätetyp, String Ausführung) {
+    public AFKunde(String Vorname, String Nachname, String Messgegenstand, double Wert, String Datum, String Gerätetyp, String Ausführung) {
         this.ID = Number;
         Number++;
         this.Vorname = Vorname;
